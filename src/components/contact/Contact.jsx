@@ -17,7 +17,7 @@ function Contact() {
       </h2>
       <div className="mx-auto max-w-[325px] overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] md:max-w-[90%] lg:flex lg:items-center">
         <div className="overflow-hidden lg:w-[50%]">
-          <img src="/homeImage.png" alt="Contact" />
+          <img src="/contact.png" alt="Contact" />
         </div>
         <div className="p-5 lg:w-[50%]">
           <p>

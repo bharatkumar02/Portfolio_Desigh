@@ -38,7 +38,7 @@ function Portfolio() {
         className="mx-auto max-w-[325px] bg-[linear-gradient(145deg,_#1e2024,_#23272b)] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] md:max-w-[90%]"
       >
         <SwiperSlide className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-          <img src="/homeImage.png" alt="Project" />
+          <img src="/form.jpeg" alt="Project" />
           <div className="space-y-3 p-2">
             <h3 className="text-xl">Contact Form Page</h3>
             <div className="flex items-center justify-evenly">
@@ -58,7 +58,7 @@ function Portfolio() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-          <img src="/homeImage.png" alt="Project" />
+          <img src="/coming.png" alt="Project" />
           <div className="space-y-3 p-2">
             <h3 className="text-xl">Rating Page</h3>
             <div className="flex items-center justify-evenly">
@@ -78,7 +78,7 @@ function Portfolio() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-          <img src="/homeImage.png" alt="Project" />
+          <img src="/rating.png" alt="Project" />
           <div className="space-y-3 p-2">
             <h3 className="text-xl">Modern Quiz Application</h3>
             <div className="flex items-center justify-evenly">
@@ -98,7 +98,7 @@ function Portfolio() {
           </div>
         </SwiperSlide>
         <SwiperSlide className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-          <img src="/homeImage.png" alt="Project" />
+          <img src="/price.png" alt="Project" />
           <div className="space-y-3 p-2">
             <h3 className="text-xl">Price Listing Page</h3>
             <div className="flex items-center justify-evenly">
