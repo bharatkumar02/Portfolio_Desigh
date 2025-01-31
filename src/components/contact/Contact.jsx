@@ -6,6 +6,34 @@ import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookF } from "react-icons/fa";
 
 function Contact() {
+  let contactDetail = [
+    {
+      icon: <IoIosCall size={20} />,
+      detail: "+91 8397826133",
+    },
+    {
+      icon: <IoLocation size={20} />,
+      detail: "Dharuhera, Rewari, Haryana",
+    },
+    {
+      icon: <IoIosMail size={20} />,
+      detail: "kumarbharat9416@gmail.com",
+    },
+  ];
+  let socialMedia = [
+    {
+      icon: <FaLinkedinIn size={25} />,
+      link: "https://www.linkedin.com/in/bharat-kumar-3046a4277/",
+    },
+    {
+      icon: <RiInstagramFill size={25} />,
+      link: "https://www.instagram.com/bhkumar9995/?next=%2F&hl=en",
+    },
+    {
+      icon: <FaFacebookF size={25} />,
+      detail: "#",
+    },
+  ];
   return (
     <section
       id="contact"
@@ -24,37 +52,27 @@ function Contact() {
             Need a freelancer? Let’s work together! Connect with me to discuss
             your project.
           </p>
-          <ul className="mt-2 space-y-2 border-t border-black pt-2 *:flex *:items-center *:gap-2">
-            <li>
-              <span className="rounded-full bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-                <IoIosCall size={20} />
-              </span>
-              <span>+91 8397826133</span>
-            </li>
-            <li>
-              <span className="rounded-full bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-                <IoLocation size={20} />
-              </span>
-              <span>Dharuhera, Rewari, Haryana</span>
-            </li>
-            <li>
-              <span className="rounded-full bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
-                <IoIosMail size={20} />
-              </span>
-              <span>kumarbharat9416@gmail.com</span>
-            </li>
+          <ul className="mt-2 space-y-2 border-t border-black pt-2 lg:mt-7 lg:space-y-5 lg:pt-7">
+            {contactDetail.map((item, index) => (
+              <li key={index} className="flex items-center gap-2">
+                <span className="rounded-full bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]">
+                  {item.icon}
+                </span>
+                <span>{item.detail}</span>
+              </li>
+            ))}
           </ul>
-          <div className="mt-5">
-            <div className="my-1 flex items-center justify-evenly *:cursor-pointer *:rounded-lg *:bg-[linear-gradient(145deg,_#1e2024,_#23272b)] *:p-2 *:shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] *:transition-all *:duration-300 *:ease-in-out *:hover:translate-y-1">
-              <a href="https://www.linkedin.com/in/bharat-kumar-3046a4277/">
-                <FaLinkedinIn size={25} />
-              </a>
-              <a href="https://www.instagram.com/bhkumar9995/?next=%2F&hl=en">
-                <RiInstagramFill size={25} />
-              </a>
-              <a href="#">
-                <FaFacebookF size={25} />
-              </a>
+          <div className="mt-5 lg:mt-16">
+            <div className="my-1 flex items-center justify-evenly">
+              {socialMedia.map((item, index) => (
+                <a
+                  key={index}
+                  href={item.link}
+                  className="cursor-pointer rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] transition-all duration-300 ease-in-out hover:translate-y-1"
+                >
+                  {item.icon}
+                </a>
+              ))}
             </div>
           </div>
         </div>

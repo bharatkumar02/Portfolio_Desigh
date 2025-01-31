@@ -11,11 +11,11 @@ function Home() {
         <ParticleComponent />
       </div>
       <div className="relative z-10 h-screen w-full bg-black/50">
-        <div className="flex h-screen flex-col items-center justify-center gap-5">
+        <div className="flex h-screen flex-col items-center justify-center gap-5 lg:gap-10">
           <div className="size-[10rem] overflow-hidden rounded-full border-b-2 border-[#212428] md:hidden">
             <img src="./bharat.png" alt="HomeImage" />
           </div>
-          <h1 className="text-center font-[poppins] text-5xl leading-14 font-medium uppercase">
+          <h1 className="text-center font-[poppins] text-5xl leading-14 font-medium uppercase lg:text-6xl">
             Bharat Kumar
           </h1>
           <Profession />

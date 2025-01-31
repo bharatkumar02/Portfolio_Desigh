@@ -32,6 +32,20 @@ function Aside() {
       sectionId: "contact",
     },
   ];
+  let socialMedia = [
+    {
+      icon: <FaLinkedinIn size={25} />,
+      link: "https://www.linkedin.com/in/bharat-kumar-3046a4277/",
+    },
+    {
+      icon: <RiInstagramFill size={25} />,
+      link: "https://www.instagram.com/bhkumar9995/?next=%2F&hl=en",
+    },
+    {
+      icon: <FaFacebookF size={25} />,
+      detail: "#",
+    },
+  ];
   return (
     <nav className="md:overscroll-scroll absolute top-0 z-50 w-full text-[#878e99] md:fixed md:flex md:h-full md:w-[35%] md:flex-col md:items-center md:justify-center md:bg-[linear-gradient(to_right_bottom,_#212428,_#16181c)] lg:w-[25%] xl:w-[20%]">
       <div
@@ -62,16 +76,16 @@ function Aside() {
             </li>
           ))}
         </ul>
-        <div className="absolute bottom-5 left-1/2 hidden w-full -translate-x-1/2 items-center justify-evenly gap-5 *:cursor-pointer *:rounded-lg *:bg-[linear-gradient(145deg,_#1e2024,_#23272b)] *:p-2 *:shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] *:transition-all *:duration-300 *:ease-in-out *:hover:translate-y-1 md:flex">
-          <a href="https://www.linkedin.com/in/bharat-kumar-3046a4277/">
-            <FaLinkedinIn size={25} />
-          </a>
-          <a href="https://www.instagram.com/bhkumar9995/?next=%2F&hl=en">
-            <RiInstagramFill size={25} />
-          </a>
-          <a href="#">
-            <FaFacebookF size={25} />
-          </a>
+        <div className="absolute bottom-5 left-1/2 hidden w-full -translate-x-1/2 items-center justify-evenly gap-5 md:flex">
+          {socialMedia.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              className="cursor-pointer rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] p-2 shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] transition-all duration-300 ease-in-out hover:translate-y-1"
+            >
+              {item.icon}
+            </a>
+          ))}
         </div>
       </section>
     </nav>
