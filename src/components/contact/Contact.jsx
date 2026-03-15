@@ -63,7 +63,7 @@ function Contact() {
             ))}
           </ul>
           <div className="mt-5 lg:mt-16">
-            <div className="my-1 flex items-center justify-evenly">
+            <div className="my-1 flex items-center gap-7">
               {socialMedia.map((item, index) => (
                 <a
                   key={index}

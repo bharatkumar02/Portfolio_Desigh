@@ -1,30 +1,28 @@
-import { RxExternalLink } from "react-icons/rx";
-import { RiGithubFill } from "react-icons/ri";
-
-function PortfolioCard({
-  heading,
-  gitLink,
-  previewLink,
-  projectImage,
-  children,
-}) {
+function PortfolioCard({ heading, projectImage, tech, description }) {
   return (
     <>
-      <div>
-        <img src={projectImage} alt="Project" />
-        <div className="space-y-3 p-2">
-          <h3 className="text-xl">{heading}</h3>
-          <div className="flex items-center justify-evenly">{children}</div>
+      <div className="group flex flex-col gap-5 p-3 md:p-5 lg:flex-row">
+        <div className="md:h-[15rem] lg:h-[20rem] lg:w-[60rem]">
+          <img
+            src={projectImage}
+            alt="Project"
+            className="size-full object-cover opacity-20 transition-all group-hover:opacity-100"
+          />
         </div>
-        <div className="relative flex *:flex *:w-1/2 *:cursor-pointer *:items-center *:justify-center *:gap-2 *:bg-[#212428] *:p-2 *:uppercase *:shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] *:transition-all *:duration-200 *:ease-in-out *:hover:text-red-500 *:hover:shadow-none">
-          <a href={gitLink}>
-            <RiGithubFill size={20} />
-            Code
-          </a>
-          <a href={previewLink}>
-            <RxExternalLink size={20} />
-            Preview
-          </a>
+        <div className="w-full space-y-3">
+          <h3 className="text-xl">{heading}</h3>
+          <div className="flex items-center justify-evenly">
+            <div className="flex flex-col gap-2 lg:gap-3">
+              <i className="text-sm">{tech}</i>
+              <div>
+                {description.map((item, index) => (
+                  <p key={index} className="leading-relaxed">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

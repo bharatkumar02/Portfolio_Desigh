@@ -1,93 +1,78 @@
-import React, { useRef } from "react";
-import { FaReact } from "react-icons/fa";
-import { RiTailwindCssFill } from "react-icons/ri";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/pagination";
 import PortfolioCard from "./PortfolioCard";
-import SlideButton from "./SlideButton";
-// import { Pagination } from "swiper/modules";
 
 const swiperSlide = [
   {
-    heading: "Contact Form Page",
-    projectImage: "/form.jpeg",
-    gitLink: "https://github.com/bharatkumar02/Sign_Up_Form",
-    previewLink: "https://sign-up-form-three-psi.vercel.app/",
+    heading: "everBound - Personalized Gift Shop | Ongoing Project",
+    projectImage: "/gift.svg",
+    tech: "MERN Stack (MongoDB, Express, React, Node.js), Tailwind CSS, Framer Motion",
+    description: [
+      "A full-stack e-commerce platform specializing in personalized acrylic gifts and apparel. I am architecting this using the MERN stack to handle complex data relationships and user authentication, ensuring a robust and secure shopping experience.",
+      "The project features a custom 2D product editor built with React, allowing customers to visualize personalizations in real-time. I am focusing on creating a modular and maintainable codebase while interactive user interface.",
+    ],
   },
   {
-    heading: "Rating Page",
-    projectImage: "/coming.png",
-    gitLink: "https://github.com/bharatkumar02/Ping_Single_Coming_Soon",
-    previewLink: "https://ping-single-coming-soon.vercel.app/",
+    heading: "Travel Agency Web App | Freelancing",
+    projectImage: "/travel.svg",
+    tech: "React.js, Tailwind CSS, React Router, ShadCN UI",
+    description: [
+      "I architected and delivered this high-performance travel platform using React.js and Tailwind CSS, focusing on a mobile-first, fully responsive UI that ensures a seamless user experience across all devices. The site features modern navigation flows designed to drive user engagement and conversions.",
+      "To ensure long-term scalability, I engineered a component-based frontend architecture and executed a complete project handover with production-ready, well-documented code.",
+    ],
   },
   {
-    heading: "Modern Quiz Application",
-    projectImage: "/rating.png",
-    gitLink: "https://github.com/bharatkumar02/Rating_Page",
-    previewLink: "https://rating-page-seven.vercel.app/",
+    heading: "E-Commerce Website | SSITC Solutions Pvt. Ltd",
+    projectImage: "/e-commerce.svg",
+    tech: "React.js, Tailwind CSS, Framer Motion, Swiper.js",
+    description: [
+      "During my tenure at SSITC Solutions, I built this modern single-page application using a scalable, component-based architecture. I utilized Tailwind CSS to efficiently style and design web pages, contributing to a streamlined and visually appealing user interface that works across all screen sizes.",
+      "I enhanced the overall visual engagement by implementing smooth animations and interactive product sliders using Framer Motion and Swiper.js. ",
+    ],
   },
   {
-    heading: "Price Listing Page",
-    projectImage: "/price.png",
-    gitLink: "https://github.com/bharatkumar02/Price_Cards",
-    previewLink: "https://price-cards-livid.vercel.app/",
+    heading: "Dverto Portfolio | SSITC Solutions Pvt. Ltd",
+    projectImage: "/portfolio.svg",
+    tech: "Tailwind CSS, JavaScript",
+    description: [
+      "I designed and developed this fully responsive portfolio to showcase professional work, ensuring a consistent UI across all devices.",
+      "The project involved implementing interactive navigation components using JavaScript to enhance the browsing experience. I specifically optimized performance and page load speeds through a clean layout structure and the strategic use of reusable Tailwind CSS utility classes.",
+    ],
   },
 ];
 
 function Portfolio() {
-  const swiperRef = useRef(null);
   return (
     <section
       id="portfolio"
       className="flex flex-col items-center justify-center gap-3 bg-[#212428] py-10"
     >
-      <span className="text-red-500 uppercase">
-        Mini Projects but Major Learning
+      <span className="font-medium tracking-wider text-red-500 uppercase">
+        Professional Projects & Technical Work
       </span>
-      <h2 className="font-[poppins] text-3xl font-semibold md:mb-5">
+      <h2 className="font-[poppins] text-3xl font-semibold text-white md:mb-5">
         My Portfolio
       </h2>
-      <Swiper
-        onSwiper={(swiper) => (swiperRef.current = swiper)}
-        slidesPerView={1}
-        // pagination={{
-        //   type: "fraction",
-        // }}
-        spaceBetween={20}
-        breakpoints={{
-          1024: { slidesPerView: 2, spaceBetween: 20 },
-        }}
-        // modules={[Pagination]}
-        className="mx-auto max-w-[325px] bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] md:max-w-[90%]"
-      >
+
+      <div className="mx-auto flex max-w-[325px] flex-col gap-8 md:max-w-[90%]">
         {swiperSlide.map((item, index) => (
-          <SwiperSlide
+          <div
             key={index}
-            className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e]"
+            className="overflow-hidden rounded-lg bg-[linear-gradient(145deg,_#1e2024,_#23272b)] text-[#878e99] shadow-[10px_10px_19px_#1c1e22,_-10px_-10px_19px_#262a2e] lg:odd:flex-row-reverse"
           >
             <PortfolioCard
               heading={item.heading}
               projectImage={item.projectImage}
               gitLink={item.gitLink}
               previewLink={item.previewLink}
-            >
-              <FaReact size={30} />
-              <RiTailwindCssFill size={30} />
-            </PortfolioCard>
-          </SwiperSlide>
+              tech={item.tech}
+              description={item.description}
+            />
+          </div>
         ))}
-      </Swiper>
-      <div className="mt-2 flex w-full items-center justify-evenly">
-        <SlideButton
-          handelClick={() => swiperRef.current?.slidePrev()}
-          icon={<FaArrowLeft size={20} />}
-        />
-        <SlideButton
-          handelClick={() => swiperRef.current?.slideNext()}
-          icon={<FaArrowRight size={20} />}
-        />
       </div>
     </section>
   );
